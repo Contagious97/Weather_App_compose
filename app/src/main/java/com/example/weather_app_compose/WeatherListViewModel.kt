@@ -10,13 +10,4 @@ class WeatherListViewModel : ViewModel(){
     var weatherList : MutableState<List<WeatherInfo>> = mutableStateOf(listOf());
     var approvedTime: MutableState<String> = mutableStateOf("");
 
-
-
-
-    fun fetchWeather(longitude : Double, latitude: Double){
-        viewModelScope.launch {
-            val api: String;
-        }
-    }
-
 }

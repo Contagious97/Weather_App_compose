@@ -19,7 +19,6 @@ private const val COORDINATES = "coordinates"
 
 class WeatherParser {
 
-
     companion object{
         fun parseWeather(response: JSONObject): Pair<List<WeatherInfo>, String>{
             var timeTemp = response.getString("approvedTime").replace("T", " ").split(":")

@@ -110,24 +110,6 @@ class MainActivity : ComponentActivity() {
                 "Not connected to the internet\nUsing saved data"
             ).show()
 
-
-            /*try {
-                weatherList = gson.fromJson(json, ListOfWeathers::class.java)
-                lastDownloaded = mPreferences.getLong("saved_lastDownload", 0L)
-
-                mHeader.setText(R.string.header_saved_data)
-
-                val timeTemp = weatherList.approvedTime.replace("T", " ").split(":")
-                val approvedTime = timeTemp[0] + ":" + timeTemp[1]
-
-                mApprovedText.text = approvedTime
-                mWeatherListAdapter = WeatherListAdapter(this, weatherList.timeSeries)
-                mRecyclerView.adapter = mWeatherListAdapter
-            } catch (e: Exception) {
-                Log.i("Resuming error", e.toString())
-                createMsgDialog("Loading data error", "Error loading saved data").show()
-                mHeader.setText(R.string.error_msg)
-            }*/
         }
 
     }
@@ -213,22 +195,6 @@ fun BottomRowPrev(){
 
 }
 
-/*@Preview
-@Composable
-fun LazyList(){
-    val list : MutableList<WeatherInfo> = mutableListOf()
-
-
-    for (i in 0 until 10){
-        list[i] = WeatherInfo(8.0,"heu","ss")
-    }
-    LazyColumn(){
-        items(list.size){
-                item -> WeatherCard(weather_info = list[item],resources.getIdentifier(list[item].wsymbIcon,"drawable",packageName)
-        }
-    }
-}*/
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
@@ -236,16 +202,6 @@ fun DefaultPreview() {
         Greeting("Android")
     }
 }
-
-/*@Preview(showBackground = true)
-@Composable
-fun CardPreview() {
-    val weatherinfo : WeatherInfo = WeatherInfo(8.0,"hey","asd")
-
-    Weather_App_composeTheme {
-        WeatherCard(weather_info = weatherinfo)
-    }
-}*/
 
 @Composable
 fun Approvedtime(approvedTime: String){
@@ -289,4 +245,3 @@ fun WeatherIcon(id: Int){
 fun WeatherTemperature(temperature : Double){
     Text(text = temperature.toString() + "\u2103")
 }
-
